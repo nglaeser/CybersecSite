@@ -6,6 +6,10 @@ from flask import redirect
 
 app = Flask(__name__, static_folder='static')
 
+@app.route('/favicon.ico')
+def favicon():
+	return send_from_directory(app.static_folder, 'favicon.ico')
+
 @app.route("/")
 @app.route("/index.html")
 def homePage():
@@ -15,9 +19,9 @@ def homePage():
 def aboutPage():
     return render_template("about.html")
 
-@app.route("/service.html")
+@app.route("/events.html")
 def eventsPage():
-    return render_template("service.html")
+    return render_template("events.html")
 
 @app.route("/contact.html")
 def contactsPage():
@@ -44,8 +48,11 @@ def send_file(filename):
     return send_from_directory(app.static_folder, filename)
 
 @app.errorhandler(404)
+@app.errorhandler(403)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template('404.html'),404
+
+
 
 if __name__ == "__main__":
     app.run()
