@@ -21,8 +21,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:listserv@listserv.sc.edu?subject=subscribe&body=SUB%20cybersec%20[first%20name]%20[last%20name]">
-                                    <img src="https://www.cse.sc.edu/files/email.png">
+                                <a href="mailto:listserv@listserv.sc.edu?subject=subscribe&body=SUB%20cybersec%20[first%20name]%20[last%20name]" class="Email">
+                                    <i class="ion-email"></i>
                                 </a>
                             </li>
                                                     </ul>
