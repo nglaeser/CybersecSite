@@ -5,7 +5,7 @@ Noemi Glaeser
 Please run `git config pull.rebase true` before commiting.
 Commits that look like 'Merged branch master' are strongly discouraged.
 
-#Requirements
+# Requirements
 Install Python Flask:
 ```
 pip install flask
