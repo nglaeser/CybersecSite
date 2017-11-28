@@ -1,6 +1,10 @@
 Noemi Glaeser  
 27-Nov-2017
 
+# Contributing
+Please run `git config pull.rebase true` before commiting.
+Commits that look like 'Merged branch master' are strongly discouraged.
+
 # Testing the site locally
 
 Check python version:
