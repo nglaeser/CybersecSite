@@ -9,7 +9,6 @@ Commits that look like 'Merged branch master' are strongly discouraged.
 Install docker and docker-compose
 ```
 https://docs.docker.com/compose/install/#prerequisites
-
 ```
 
 # Testing
