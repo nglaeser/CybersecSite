@@ -6,9 +6,10 @@ from flask import redirect
 
 app = Flask(__name__, static_folder='static')
 
+#Routes 
 @app.route('/favicon.ico')
 def favicon():
-	return send_from_directory(app.static_folder, 'favicon.ico')
+    return send_from_directory(app.static_folder, 'favicon.ico')
 
 @app.route("/")
 @app.route("/index.html")
@@ -43,15 +44,16 @@ def getLeftSidebar():
 def getRightSidebar():
     return render_template("blog-right-sidebar.html")
 
+#TODO Server static files from nginx instead of flask
 @app.route('/<path:filename>')
 def send_file(filename):
     return send_from_directory(app.static_folder, filename)
 
+#TODO Better error handling
 @app.errorhandler(404)
 @app.errorhandler(403)
 def page_not_found(e):
     return render_template('404.html'),404
-
 
 
 if __name__ == "__main__":
