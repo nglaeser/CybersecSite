@@ -182,7 +182,7 @@ a:hover {
 #hero-area h2 {
   font-size: 18px;
   font-weight: 300;
-  margin-bottom: 38px;
+  margin-bottom: 5px;
   line-height: 27px;
   text-transform: uppercase;
   color: #333;
@@ -191,7 +191,7 @@ a:hover {
 }
 #hero-area .arrow-button {
   padding: 20px 35px;
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 56px;
   color: #333;
   line-height: 1em;
