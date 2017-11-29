@@ -12,7 +12,7 @@ static/head.txt
 static/header.txt
 static/footer.txt
 ```
-This is for the purposes of consistency, and also allows for easier modification and standardization of headers in all HTML files with VIM.
+This is for the purposes of consistency, and also allows for easier modification and standardization of headers in all HTML files with Vim.
 
 # Requirements
 Install Python Flask:
