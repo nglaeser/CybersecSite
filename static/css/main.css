@@ -1,8 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
+@import url('https://fonts.googleapis.com/css?family=Play:400,700');
+@import url('https://fonts.googleapis.com/css?family=Cabin+Condensed|Cabin:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed');
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: ivory;
   background-color: #580f0f; // very dark red
 }
@@ -12,11 +15,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Ubuntu Condensed', sans-serif;
     color: antiquewhite;
 }
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   line-height: 22px;
   font-size: 16px;
   font-weight: 300;
@@ -157,7 +160,7 @@ a:hover {
 #hero-area:before {
   content: '';
   z-index: 9;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.20);
   position: absolute;
   top: 0;
   left: 0;
@@ -183,7 +186,7 @@ a:hover {
   line-height: 27px;
   text-transform: uppercase;
   color: #666;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin-top: 25px;
 }
 #hero-area .btn {
@@ -220,7 +223,7 @@ a:hover {
 #call-to-action .block p {
   font-size: 15px;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin-top: 20px;
 }
 #call-to-action .block .btn-contact {
@@ -884,7 +887,7 @@ article {
   padding: 30px 0;
 }
 .blog-content h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .blog-content h2 a {
   color: #444;
