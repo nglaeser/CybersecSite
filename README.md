@@ -34,5 +34,5 @@ python app.py
 You can now access the content in your browser at `localhost:5000` (5000 is the default port, but you can specify a different one by appending the port number to the above command). 
 
 # Color codes
-Garnet: `#73000a`
+Garnet: `#73000a`  
 Black: `#000000`
