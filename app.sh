@@ -10,8 +10,7 @@ if [ ! -L /etc/nginx/sites-available/cybersec ]; then
 	sudo ln -s $(realpath `pwd`)/site.conf /etc/nginx/sites-available/cybersec
 fi
 
-start() {
-   echo "Starting NGINX Web Server..."
+setup() {
    if  [ ! -L /usr/share/nginx/local.conf ]; then
 	sudo ln -s $NGINX_CONF /usr/share/nginx/local.conf
    fi
@@ -21,6 +20,15 @@ start() {
    if [ ! -L /var/www/html/cybersec ]; then
 	sudo ln -s "$(realpath `pwd`)/templates" /var/www/html/cybersec
    fi
+}
+destruct() {
+   for file in /usr/share/nginx/local.conf /etc/nginx/sites-enabled/cybersec; do
+	if [ -L $file ]; then sudo rm $file; fi
+   done
+}
+start() {
+   setup
+   echo "Starting NGINX Web Server..."
    sudo $NGINX -c local.conf
    RETVAL=$?
    [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
@@ -29,14 +37,16 @@ start() {
 stop() {
    echo "Stopping NGINX Web Server:"
    sudo $NGINX -s quit
+   destruct
    RETVAL=$?
-   for file in /usr/share/nginx/local.conf /etc/nginx/sites-enabled/cybersec; do
-	if [ -L $file ]; then sudo rm $file; fi
-   done
    [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
    return $RETVAL
 }
 case "$1" in
+   destruct)
+	destruct;;
+   setup)
+	setup;;
    start)
       start
       ;;
@@ -48,7 +58,7 @@ case "$1" in
       start
       ;;
    *)
-      echo "Usage: [NGINX NGINX_CONF] $0 {start|stop|restart}"
+      echo "Usage: $0 {start|stop|restart}"
       exit 1
 esac
 exit $RETVAL
