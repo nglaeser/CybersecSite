@@ -2,19 +2,25 @@
 # mostly copied from https://www.nginx.com/resources/wiki/start/topics/tutorials/solaris_11/#startup-script
 
 NGINX="${NGINX:-`which nginx`}" # use passed parameter or default
-NGINX_CONF="${NGINX_CONF:-`pwd`/nginx.conf}" # ditto
+DIR=${DIR:-$(realpath `pwd`)}
+NGINX_CONF="${NGINX_CONF:-$DIR/nginx.conf}" # ditto
 RETVAL=0
+echo Using $NGINX_CONF
 
 start() {
-   echo "Starting NGINX Web Server: \c"
+   if ! [ "`pwd`" = "`grep '^[[:blank:]]*root [^[:blank:]]*;' nginx.conf | tr ' ' '\n' | tr -d ';' | tail -1`" ]; then
+	echo "Serving `pwd` (and messing up our lovely indents)"
+	sed -i "s%^[[:blank:]]*root [^[:blank:]]*;% root `pwd`;%" $NGINX_CONF
+   fi
+   echo "Starting NGINX Web Server..."
    $NGINX -c $NGINX_CONF &
    RETVAL=$?
    [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
    return $RETVAL
 }
 stop() {
-   echo "Stopping NGINX Web Server: \c"
-   $NGINX_CMD -s quit
+   echo "Stopping NGINX Web Server:"
+   $NGINX -s quit
    RETVAL=$?
    [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
    return $RETVAL
