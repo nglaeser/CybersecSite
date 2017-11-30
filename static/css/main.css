@@ -185,25 +185,24 @@ a:hover {
   margin-top: 25px;
 }
 #hero-area .arrow-button {
-  padding: 20px 35px;
+  padding: 20px 20px 20px 20px;
   margin-top: 15px;
-  font-size: 76px;
-  color: #333;
-  line-height: 1em;
+  color: #fff;
+  line-height: 100%;
+  box-sizing: border-box;
   border-radius: 0;
 }
 #hero-area .btn {
   background: #414141;
   border: none;
   color: #fff;
-  padding: 20px 35px;
+  box-sizing: border-box;
+  padding: 20px 20px 20px 20px;
   margin-top: 30px;
-  font-size: 16px;
-  font-size: 13px;
-  line-height: 1em;
+  font-size: 46px;
   text-transform: uppercase;
   letter-spacing: normal;
-  border-radius: 0;
+  border-radius: 50%;
 }
 #call-to-action {
   background: #73000a;
