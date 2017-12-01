@@ -116,6 +116,7 @@ a:hover {
 }
 #top-bar .main-menu li {
   position: relative;
+  color: #73000a;
 }
 #top-bar .main-menu li a {
   font-size: 14px;
@@ -125,9 +126,10 @@ a:hover {
   -o-transition: .3s all;
   transition: .3s all;
   text-transform: uppercase;
+  color: #73000a;
 }
 #top-bar .main-menu li a:hover {
-  color: #73000a;
+  color: #fff;
 }
 .navbar-custom .nav li > a {
   position: relative;
@@ -144,7 +146,7 @@ a:hover {
   opacity: 0;
 }
 #hero-area {
-  background: url('../images/BlueLock.png') no-repeat 50%;
+  background: url('../images/RedLock2.png') no-repeat 50%;
   background-size: cover;
   background-attachment: fixed;
   padding: 230px 0;
@@ -169,7 +171,7 @@ a:hover {
 #hero-area h1 {
   font-size: 40px;
   line-height: 50px;
-  color: #333;
+  color: #000;
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -180,7 +182,7 @@ a:hover {
   margin-bottom: 5px;
   line-height: 27px;
   text-transform: uppercase;
-  color: #333;
+  color: #000;
   font-family: 'Ubuntu', sans-serif;
   margin-top: 25px;
 }
@@ -193,7 +195,7 @@ a:hover {
   border-radius: 0;
 }
 #hero-area .btn {
-  background: #414141;
+  background: #000;
   border: none;
   color: #fff;
   box-sizing: border-box;
@@ -514,6 +516,14 @@ figure figcaption p {
   font-size: 13px;
   margin-bottom: 0;
   margin-top: 10px;
+  color: #333;
+}
+#footer .copyright-theme {
+  margin-top: 0px;
+  color: #333;
+}
+#footer .copyright-theme a {
+  color: #73000a;
 }
 #footer .social {
   text-align: right;
