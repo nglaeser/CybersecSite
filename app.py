@@ -30,9 +30,9 @@ def eventsPage():
 def contactsPage():
     return render_template("contact.html")
 
-@app.route("/gallery.html")
+@app.route("/links.html")
 def galleryPage():
-    return render_template("gallery.html")
+    return render_template("links.html")
 
 @app.route("/blog-fullwidth.html")
 def getFullWidth():
