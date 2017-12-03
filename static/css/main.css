@@ -519,7 +519,7 @@ figure figcaption p {
 #footer .copyright {
   font-size: 13px;
   margin-bottom: 0;
-  margin-top: 10px;
+  margin-top: 0;
   color: #333;
 }
 #footer .copyright-theme {
@@ -1003,6 +1003,15 @@ article {
   font-weight: 300;
   color: #999;
   font-size: 12px;
+}
+#links {
+  padding: 100px;
+}
+#links li a {
+  color: #000;
+}
+#links li a:hover {
+  color: #fff;
 }
 .gallery {
   padding: 100px;
