@@ -104,7 +104,6 @@ a:hover {
   padding: 15px 0;
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #dedede;
 }
 #top-bar .navbar-nav > li > a:hover {
   background: transparent;
@@ -157,7 +156,7 @@ a:hover {
 #hero-area:before {
   content: '';
   z-index: 9;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(115, 0, 1, 0.35);
   position: absolute;
   top: 0;
   left: 0;
@@ -210,7 +209,7 @@ a:hover {
   letter-spacing: normal;
   border-radius: 50%;
 }
-#call-to-action {
+#achievements {
   background: #73000a;
   background-size: cover;
   background-attachment: fixed;
@@ -219,22 +218,22 @@ a:hover {
   position: relative;
   color: #fff;
 }
-#call-to-action .block {
+#achievements .block {
   position: relative;
   z-index: 99;
   color: #fff;
 }
-#call-to-action .block h2 {
+#achievements .block h2 {
   margin-bottom: 15px;
   color: #fff;
 }
-#call-to-action .block p {
+#achievements .block p {
   font-size: 15px;
   font-weight: 300;
   font-family: 'Ubuntu', sans-serif;
   margin-top: 20px;
 }
-#call-to-action .block .btn-contact {
+#achievements .block .btn-contact {
   background: #fff;
   border: none;
   color: #73000a;
@@ -245,7 +244,7 @@ a:hover {
   text-transform: uppercase;
   border-radius: 0;
 }
-#call-to-action .block .btn-contact i {
+#achievements .block .btn-contact i {
   margin-right: 10px;
 }
 #about {
@@ -843,6 +842,12 @@ ul.social-icons li {
 .company-description .block p {
   color: antiquewhite;
 }
+.company-description .about-image {
+  max-height: 400px;
+  max-width : 400px;
+  height: 300px;
+  width: 300px;
+}
 #team {
   margin: 50px 0;
 }
@@ -892,6 +897,11 @@ ul.social-icons li {
 }
 .about-feature .about-feature-1 {
   background: #350308;
+}
+.about-social li a {
+}
+.listserv-list {
+  margin-left: 15%;
 }
 .about-feature .about-feature-3 {
   background: #b71321;
