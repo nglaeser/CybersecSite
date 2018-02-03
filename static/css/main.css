@@ -877,6 +877,12 @@ ul.social-icons li {
 #team {
   margin: 50px 0;
 }
+div .col-md-3 {
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+  width: 100%;
+}
 .team-member {
   margin-top: 30px;
 }
@@ -888,6 +894,7 @@ ul.social-icons li {
 }
 .team-member .team-img .team-pic {
   width: 100%;
+  height: auto;
 }
 .team-member .team_designation {
   font-size: 13px;
@@ -898,6 +905,25 @@ ul.social-icons li {
 }
 .team-member p {
   font-size: 14px;
+}
+#call-to-action {
+  background: black;
+}
+.gcal {
+  float: center;
+}
+.calendar {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+#call-to-action .social-icons a {
+  float: center;
+  position: relative;
+  text-align: center;
+  background: #73000a;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 15px;
 }
 .team-member .social-icons a {
   background: #73000a;
