@@ -241,7 +241,7 @@
         return Boolean(email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/))
     }
     $('#contact-form').submit(function() {
-        if (validateEmail('#email')) { return true; }
+        if (validateEmail($('#email')[0].value)) { return true; }
         else {
             alert("Please enter a valid email.");
             return false;
