@@ -883,6 +883,11 @@ div .col-md-3 {
   column-count: 4;
   width: 100%;
 }
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+}
 .team-member {
   margin-top: 30px;
 }
