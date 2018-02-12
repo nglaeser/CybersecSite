@@ -6,7 +6,7 @@
 
 if [ "$#" -lt 2 -o "$#" -gt 3 ]; then
 	printf "Usage: $(basename "$0") "
-	echo "<return address> <subject> <body_file> [destination]"
+	echo "<subject> <body_file> [destination]"
 	exit 1
 fi
 
