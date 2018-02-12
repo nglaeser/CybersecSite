@@ -1,0 +1,20 @@
+#!/bin/sh
+# Takes following arguments:
+# $1 - return address
+# $2 - subject
+# $3 - file containing body of message
+# $4 - destination address
+
+if [ "$#" -lt 3 -o "$#" -gt 4 ]; then
+	printf "Usage: $(basename "$0") "
+	echo "<return address> <subject> <body_file> [destination]"
+	exit 1
+fi
+
+if [ -z $4 ]; then
+	DEST="cyber-security@cec.sc.edu"
+else
+	DEST="$4"
+fi
+
+mail -r "$1" -s "$2" "$DEST" < "$3"

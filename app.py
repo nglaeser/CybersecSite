@@ -4,6 +4,11 @@ from flask import Flask
 from flask import render_template
 from flask import send_from_directory
 from flask import redirect
+from flask import request
+
+from subprocess import call
+from uuid import uuid1 as uuid
+from os import remove
 
 app = Flask(__name__, static_folder='static')
 
@@ -16,6 +21,18 @@ def favicon():
 @app.route("/index.html")
 def homePage():
     return render_template("index.html")
+
+@app.route("/sendmail.php", methods=['POST'])
+def sendMail(dest="cyber-security@cec.sc.edu"):
+    message = "/tmp/sendmail-" + str(uuid())
+    with open(message, 'w+') as f:
+        f.write("Sent by " + request.form['name'] + " through the Cyber Security website contact page:\n\n")
+        f.write(request.form['message'])
+        f.write('\n')
+    call(["./sendmail", request.form['email'], request.form['subject'], message, dest])
+    remove(message)
+    # TODO: have a mail_success page
+    return redirect('index.html')
 
 @app.route("/about.html")
 def aboutPage():
