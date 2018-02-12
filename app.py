@@ -26,10 +26,13 @@ def homePage():
 def sendMail(dest="cyber-security@cec.sc.edu"):
     message = "/tmp/sendmail-" + str(uuid())
     with open(message, 'w+') as f:
-        f.write("Sent by " + request.form['name'] + " through the Cyber Security website contact page:\n\n")
+        f.write("Sent by " + request.form['name'])
+        f.write(" through the Cyber Security website contact page.\n")
+        # Note that writing return address directory is not allowed by SMTP server.
+        f.write("Return email requested to " + request.form['email'] + "\n\n")
         f.write(request.form['message'])
         f.write('\n')
-    call(["./sendmail", request.form['email'], request.form['subject'], message, dest])
+    call(["./sendmail", request.form['subject'], message, dest])
     remove(message)
     # TODO: have a mail_success page
     return redirect('index.html')
