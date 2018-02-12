@@ -162,11 +162,11 @@
                                 <form id="contact-form" method="post" action="sendmail.php" role="form">
                         
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" autocomplete="name">
                                     </div>
                                     
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email" >
+                                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email" autocomplete="email">
                                     </div>
                                     
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
@@ -241,9 +241,11 @@
         return Boolean(email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/))
     }
     $('#contact-form').submit(function() {
-        if (validateEmail($('#email')[0].value)) { return true; }
-        else {
-            alert("Please enter a valid email.");
+        if (validateEmail($('#email')[0].value) && $('#name')[0].value.trim() !== "" &&
+        $('#subject')[0].value.trim() !== "" && $('#message')[0].value.trim() !== "") {
+            return true;
+        } else {
+            alert("Please enter a valid email and fill all fields.");
             return false;
         }
     });

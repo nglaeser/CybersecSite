@@ -12,7 +12,7 @@ from os import remove
 
 app = Flask(__name__, static_folder='static')
 
-#Routes 
+#Routes
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(app.static_folder, 'favicon.ico')
