@@ -22,8 +22,17 @@ def favicon():
 def homePage():
     return render_template("index.html")
 
+def badForm():
+    # TODO: show an error message
+    # Stuff should only get here if people mess with client-side JS
+    return redirect('/contact.html')
+
 @app.route("/sendmail.php", methods=['POST'])
 def sendMail(dest="cyber-security@cec.sc.edu"):
+    for field in ('name', 'email', 'subject', 'body'):
+        if not request.form[field].strip():
+            return badForm()
+
     message = "/tmp/sendmail-" + str(uuid())
     with open(message, 'w+') as f:
         f.write("Sent by " + request.form['name'])
