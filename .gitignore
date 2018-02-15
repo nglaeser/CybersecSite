@@ -34,3 +34,9 @@ Thumbs.db
 *.rar
 *.tar
 *.zip
+
+# Jekyll stuff #
+################
+_site
+.sass-cache
+.jekyll-metadata
