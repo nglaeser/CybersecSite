@@ -18,6 +18,7 @@ __MACOSX
 .DS_Store?
 ._*
 .Spotlight-V100
+*.swp
 .Trashes
 ehthumbs.db
 Thumbs.db
