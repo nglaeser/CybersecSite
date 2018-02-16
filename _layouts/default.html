@@ -2,8 +2,16 @@
 <html lang="{{ page.lang | default: site.lang | default: en }}" class="no-js">
 {% include head.html %}
 <body>
+    {% assign css_files = site.static_files | where: "css", true %}
+    {% for css in css_files %}
+        <link rel="stylesheet" href="{{ css.path }}"></script>
+    {% endfor %}
     {% include header.html %}
     {{ content }}
     {% include footer.html %}
 </body>
+{% assign js_files = site.static_files | where: "js", true %}
+{% for js in js_files %}
+    <script src="{{ js.path }}"></script>
+{% endfor %}
 </html>

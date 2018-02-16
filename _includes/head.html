@@ -1,24 +1,15 @@
-    <head>
-        <!-- Basic Page Needs -->
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" type="image/png" href="/static/images/logo.jpg">
-        <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-        <title>{{ page.title | default: site.title }}</title>
-        <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
-        <meta name="author" content="Joshua Nelson and Noemi Glaeser">
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/png" href="/static/images/logo.jpg">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="author" content="Joshua Nelson and Noemi Glaeser">
 
-        <!-- Mobile Specific Metas -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        {% assign css_files = site.static_files | where: "css", true %}
-        {% for css in css_files %}
-            <link rel="stylesheet" href="{{ css.path }}"></script>
-        {% endfor %}
+    <!-- Mobile Specific Metas -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% assign js_files = site.static_files | where: "js", true %}
-        {% for js in js_files %}
-            <script src="{{ js.path }}"></script>
-        {% endfor %}
-    </head>
+</head>
