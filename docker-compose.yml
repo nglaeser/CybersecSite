@@ -1,6 +1,21 @@
 version: '3'
 services:
-    web:
-        build: .
+    webapp:
+        container_name: webapp
+        build: 
+            context: ./
+            dockerfile: ./webapp/Dockerfile
+        expose:
+            - "3000"
+
+    nginx:
+        container_name: nginx
+        build:
+            context: ./
+            dockerfile: ./nginx/Dockerfile
         ports:
-        - "5000:5000"
+            - "127.0.0.1:80:80"
+        depends_on:
+            - webapp
+
+
