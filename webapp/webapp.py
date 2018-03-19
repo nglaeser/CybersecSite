@@ -35,7 +35,7 @@ def sendMail():
         sender = request.form.get('email').strip() 
         message = request.form.get('message')
         msg = Message(sender=sender,
-                recipients=["hcnorris@email.sc.edu"],
+                recipients=["cyber-security@cec.sc.edu"],
                 body = message,
                 subject = subject)
         mail.send(msg)
