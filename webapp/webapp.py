@@ -5,12 +5,13 @@ from flask import render_template
 from flask import send_from_directory
 from flask import redirect
 from flask import request
+from flask_mail import Mail
+from flask_mail import Message
 
-from subprocess import call
-from uuid import uuid1 as uuid
-from os import remove
 
 app = Flask(__name__, static_folder='static')
+app.config.update(MAIL_SERVER='mailhandler')
+mail = Mail(app)
 
 #Routes
 @app.route('/favicon.ico')
@@ -27,24 +28,22 @@ def badForm():
     # Stuff should only get here if people mess with client-side JS
     return redirect('/contact.html')
 
-@app.route("/sendmail.php", methods=['POST'])
-def sendMail(dest="cyber-security@cec.sc.edu"):
-    for field in ('name', 'email', 'subject', 'body'):
-        if not request.form[field].strip():
-            return badForm()
+@app.route("/contact.html", methods=['GET','POST'])
+def sendMail():
+    if request.method == 'POST':
+        subject = "Sent by {} through the Cyber Securtiy Website Contact Page".format(request.form.get('name').strip())
+        sender = request.form.get('email').strip() 
+        message = request.form.get('message')
+        msg = Message(sender=sender,
+                recipients=["hcnorris@email.sc.edu"],
+                body = message,
+                subject = subject)
+        mail.send(msg)
+        # TODO: have a mail_success page
+        return redirect('index.html')
 
-    message = "/tmp/sendmail-" + str(uuid())
-    with open(message, 'w+') as f:
-        f.write("Sent by " + request.form['name'])
-        f.write(" through the Cyber Security website contact page.\n")
-        # Note that writing return address directory is not allowed by SMTP server.
-        f.write("Return email requested to " + request.form['email'] + "\n\n")
-        f.write(request.form['message'])
-        f.write('\n')
-    call(["./sendmail", request.form['subject'], message, dest])
-    remove(message)
-    # TODO: have a mail_success page
-    return redirect('index.html')
+    else:
+        return render_template("contact.html")
 
 @app.route("/about.html")
 def aboutPage():
@@ -53,10 +52,6 @@ def aboutPage():
 @app.route("/events.html")
 def eventsPage():
     return render_template("events.html")
-
-@app.route("/contact.html")
-def contactsPage():
-    return render_template("contact.html")
 
 @app.route("/links.html")
 def galleryPage():

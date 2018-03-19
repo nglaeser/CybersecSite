@@ -18,4 +18,14 @@ services:
         depends_on:
             - webapp
 
+    mailhandler:
+        container_name: mail_handler
+        build:
+            context: ./
+            dockerfile: ./mailhandler/Dockerfile
+        expose:
+            - "25"
+        depends_on:
+            - nginx
+
 
