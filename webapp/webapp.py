@@ -10,7 +10,7 @@ from flask_mail import Message
 
 
 app = Flask(__name__, static_folder='static')
-app.config.update(MAIL_SERVER='mailhandler')
+app.config['MAIL_SERVER'] = 'mailhandler'
 mail = Mail(app)
 
 #Routes
@@ -32,13 +32,14 @@ def badForm():
 def sendMail():
     if request.method == 'POST':
         subject = "Sent by {} through the Cyber Securtiy Website Contact Page".format(request.form.get('name').strip())
-        sender = request.form.get('email').strip() 
+        sender = request.form.get('email').strip()
         message = request.form.get('message')
         msg = Message(sender=sender,
                 recipients=["cyber-security@cec.sc.edu"],
                 body = message,
                 subject = subject)
         mail.send(msg)
+        # TODO: handle errors so message isn't discarded
         # TODO: have a mail_success page
         return redirect('index.html')
 
