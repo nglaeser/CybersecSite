@@ -2,11 +2,12 @@ version: '3'
 services:
     webapp:
         container_name: webapp
-        build: 
+        build:
             context: ./
             dockerfile: ./webapp/Dockerfile
         expose:
             - "3000"
+            - "25"
 
     nginx:
         container_name: nginx
@@ -19,7 +20,7 @@ services:
             - webapp
 
     mailhandler:
-        container_name: mail_handler
+        container_name: mailhandler
         build:
             context: ./
             dockerfile: ./mailhandler/Dockerfile
@@ -27,5 +28,4 @@ services:
             - "25"
         depends_on:
             - nginx
-
 
