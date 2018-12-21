@@ -14,8 +14,8 @@ Navigate to the directory where you want to spin up a server and type one of the
 You can now access the content in your browser at `localhost:5000`. 
 
 # Color codes
-Garnet: `#73000a`
+Garnet: `#73000a`  
 Black: `#000000`
 
 # Live
-In the near future, the site will be live at [usccyber.org](https://165.227.216.159:5000).
+The cybersecurity club site (not built from this code) is currently live at [usccyber.org](https://www.usccyber.org).
