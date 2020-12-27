@@ -1,5 +1,4 @@
-Noemi Glaeser  
-27-Nov-2017
+*Note: this repo has been archived.*
 
 # Requirements
 Install docker and [docker-compose](https://docs.docker.com/compose/install/#prerequisites),
